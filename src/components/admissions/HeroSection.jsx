@@ -5,7 +5,6 @@ const HeroSection = () => {
     <div className="relative overflow-hidden bg-cream py-12 md:py-16 lg:py-24 border-b border-gold-10">
       <br/>
       {/* Decorative elements */}
-      <div className="absolute top-10 right-5 md:top-20 md:right-10 w-32 h-32 md:w-64 md:h-64 bg-primary/5 rounded-full animate-float-slow opacity-30"></div>
       <div className="absolute bottom-10 left-5 md:bottom-20 md:left-10 w-24 h-24 md:w-48 md:h-48 bg-secondary/5 rounded-full animate-float opacity-30"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">

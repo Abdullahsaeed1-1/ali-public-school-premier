@@ -82,13 +82,6 @@ const OutcomesSection = () => {
         }
     ];
 
-    const successMetrics = [
-        { metric: "98%", label: "Secondary Readiness", icon: "🎯" },
-        { metric: "95%", label: "Character Development", icon: "🌟" },
-        { metric: "100%", label: "Parent Satisfaction", icon: "👨‍👩‍👧‍👦" },
-        { metric: "90%+", label: "Holistic Growth", icon: "📈" }
-    ];
-
     return (
         <section ref={ref} className="py-12 md:py-16 bg-white">
             <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -126,7 +119,7 @@ const OutcomesSection = () => {
                     </motion.div>
 
                     {/* Outcomes Grid */}
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-10">
+                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                         {outcomes.map((outcome, index) => (
                             <motion.div
                                 key={index}
@@ -169,34 +162,6 @@ const OutcomesSection = () => {
                             </motion.div>
                         ))}
                     </div>
-
-                    {/* Success Metrics */}
-                    <motion.div
-                        variants={containerVariants}
-                        className="mb-10"
-                    >
-                        <h3 className="font-heading text-2xl text-[#29234B] font-bold mb-6 text-center">
-                            Success Metrics
-                        </h3>
-                        <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                            {successMetrics.map((metric, index) => (
-                                <motion.div
-                                    key={index}
-                                    variants={itemVariants}
-                                    className="bg-white rounded-xl p-4 text-center border border-[#D4AF37]/10 shadow-sm"
-                                    whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-                                >
-                                    <div className="text-2xl mb-1">{metric.icon}</div>
-                                    <div className="font-heading text-3xl text-[#29234B] font-bold mb-1">
-                                        {metric.metric}
-                                    </div>
-                                    <div className="font-body text-[#29234B]/80 text-xs">
-                                        {metric.label}
-                                    </div>
-                                </motion.div>
-                            ))}
-                        </div>
-                    </motion.div>
 
                     {/* Final Impact Statement */}
 

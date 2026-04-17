@@ -3,6 +3,7 @@ import Swal from "sweetalert2";
 
 const Contact = () => {
   const subjectOptions = ["Complaint", "General Information", "Registration"];
+  const mapDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=33.99053350641758,71.49571067960983&travelmode=driving&dir_action=navigate";
 
   const messageDraftBySubject = {
     Complaint:
@@ -22,20 +23,14 @@ const Contact = () => {
   });
 
   const [errors, setErrors] = useState({});
+  const messagePlaceholder =
+    (formData.subject && messageDraftBySubject[formData.subject]) ||
+    "Write your message here...";
 
   // Handle input change
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setFormData((prev) => {
-      const updated = { ...prev, [name]: value };
-
-      // If subject changes and message is still empty, prefill a helpful draft.
-      if (name === "subject" && !prev.message.trim() && messageDraftBySubject[value]) {
-        updated.message = messageDraftBySubject[value];
-      }
-
-      return updated;
-    });
+    setFormData((prev) => ({ ...prev, [name]: value }));
 
     // Clear error for this field when user types
     if (errors[name]) {
@@ -245,9 +240,9 @@ const Contact = () => {
                   rows="4"
                   value={formData.message}
                   onChange={handleChange}
-                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-300 bg-gray-50 focus:bg-white text-gray-900 font-body ${errors.message ? 'border-red-500' : 'border-gray-300'
+                  className={`w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-secondary focus:border-transparent transition duration-300 bg-gray-50 focus:bg-white text-gray-900 font-body placeholder:text-gray-400 ${errors.message ? 'border-red-500' : 'border-gray-300'
                     }`}
-                  placeholder="Write your message here..."
+                  placeholder={messagePlaceholder}
                 ></textarea>
                 {errors.message && (
                   <p className="text-red-500 text-sm mt-1 font-body">{errors.message}</p>
@@ -277,6 +272,14 @@ const Contact = () => {
                   <div className="font-body text-gray-700">
                     <p className="font-medium">Address</p>
                     <p className="text-gray-600">29 C 17 Circular Road, University Town, Peshawar, Peshawar, Pakistan, 25000</p>
+                    <a
+                      href={mapDirectionsUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="inline-flex mt-2 text-secondary hover:text-secondary-dark text-sm font-semibold transition-colors duration-300"
+                    >
+                      Open in Maps
+                    </a>
                   </div>
                 </div>
                 <div className="flex items-start group">
@@ -304,17 +307,27 @@ const Contact = () => {
               </h2>
               <div className="bg-gray-200 rounded-lg h-64 overflow-hidden relative group">
                 <iframe
-                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3307.3564!2d71.482!3d33.999!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x38d910d6!2sUniversity+Town+Peshawar!5e0!3m2!1sen!2spk!4v1710000000000"
+                  src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d799.2655111141356!2d71.49571067960983!3d33.99053350641758!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1sen!2sus!4v1776427635174!5m2!1sen!2sus"
                   width="100%"
                   height="100%"
-                  style={{ border: 0 }}
+                  style={{ border: 0, top: '-56px', height: 'calc(100% + 56px)' }}
                   allowFullScreen=""
                   loading="lazy"
                   referrerPolicy="no-referrer-when-downgrade"
-                  className="relative z-10"
+                  className="absolute left-0 z-10 w-full"
                 ></iframe>
                 {/* Pointer events none add kiya hai takay map scroll/zoom pe masla na kare aur animation bhi chalti rahe */}
                 <div className="absolute inset-0 bg-secondary opacity-0 group-hover:opacity-10 transition-opacity duration-300 pointer-events-none z-20"></div>
+              </div>
+              <div className="mt-4">
+                <a
+                  href={mapDirectionsUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex w-full sm:w-auto items-center justify-center px-5 py-3 bg-[#29234B] text-white font-semibold rounded-lg hover:bg-[#1f1a3a] transition-colors duration-300"
+                >
+                  Open in Maps
+                </a>
               </div>
             </div>
           </div>

@@ -5,6 +5,8 @@ import brochureImg from "../../assets/images/brochure.png";
 import { Link } from 'react-router-dom';
 
 const VisitUs = () => {
+    const mapDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=33.99053350641758,71.49571067960983&travelmode=driving&dir_action=navigate";
+
     return (
         /* Padding ko mobile par thoda kam kiya hai taake screen space bache */
         <div className="py-12 md:py-20 lg:py-24 bg-cream overflow-hidden">
@@ -43,6 +45,14 @@ const VisitUs = () => {
                                 <div>
                                     <h4 className="font-bold text-primary text-base md:text-lg">Premier Campus Location</h4>
                                     <p className="text-gray-600 text-sm leading-snug">29 C 17 Circular Road, near KFC, University Town, Peshawar</p>
+                                    <a
+                                        href={mapDirectionsUrl}
+                                        target="_blank"
+                                        rel="noopener noreferrer"
+                                        className="inline-flex mt-2 text-secondary hover:text-[#29234B] text-sm font-semibold transition-colors duration-300"
+                                    >
+                                        Open in Maps
+                                    </a>
                                 </div>
                             </div>
 

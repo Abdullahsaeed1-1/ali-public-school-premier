@@ -1,35 +1,57 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import 'react-pdf/dist/Page/AnnotationLayer.css';
 import 'react-pdf/dist/Page/TextLayer.css';
 import { FaChevronLeft, FaChevronRight, FaDownload, FaSpinner } from 'react-icons/fa';
 import { motion } from 'framer-motion';
+import prospectusFile from '../../assets/prospectus.pdf';
 
-// Set up PDF.js worker
-if (typeof window !== 'undefined') {
-  pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.min.js`;
-}
+// Use local worker to avoid CDN/network-related loading failures.
+pdfjs.GlobalWorkerOptions.workerSrc = new URL(
+  'pdfjs-dist/build/pdf.worker.min.mjs',
+  import.meta.url,
+).toString();
+
+const getPageRenderWidth = () => {
+  if (typeof window === 'undefined') return 360;
+
+  const viewportWidth = window.innerWidth;
+
+  if (viewportWidth >= 1280) return 400;
+  if (viewportWidth >= 1024) return 360;
+  if (viewportWidth >= 768) return Math.min(460, viewportWidth - 96);
+  return Math.max(260, viewportWidth - 56);
+};
 
 const ProspectusViewer = () => {
   const [numPages, setNumPages] = useState(null);
   const [pageNumber, setPageNumber] = useState(1);
-  const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [pageRenderWidth, setPageRenderWidth] = useState(getPageRenderWidth);
   
-  // Use public path for PDF
-  const prospectusPath = '/prospectus.pdf';
+  const prospectusPath = prospectusFile;
 
   const onDocumentLoadSuccess = ({ numPages }) => {
     setNumPages(numPages);
-    setLoading(false);
   };
 
   const onDocumentLoadError = (error) => {
     console.error('Error loading PDF:', error);
     console.error('PDF Path:', prospectusPath);
     setError('Unable to load prospectus. Please try refreshing the page or contact the school.');
-    setLoading(false);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      setPageRenderWidth(getPageRenderWidth());
+    };
+
+    window.addEventListener('resize', handleResize);
+
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
   const goToPrevPage = () => {
     if (pageNumber > 1) {
@@ -123,31 +145,32 @@ const ProspectusViewer = () => {
         <motion.div variants={itemVariants} className="bg-white rounded-3xl shadow-2xl overflow-hidden">
           <div className="flex flex-col lg:flex-row">
             {/* PDF Display Area */}
-            <div className="flex-1 bg-gray-100 flex items-center justify-center p-6">
-              {loading && (
-                <div className="flex flex-col items-center justify-center h-96">
-                  <FaSpinner className="text-4xl text-[#D4AF37] animate-spin mb-4" />
-                  <p className="text-gray-600">Loading prospectus...</p>
-                </div>
-              )}
-
-              {!loading && (
-                <div className="w-full">
-                  <Document
-                    file={prospectusPath}
-                    onLoadSuccess={onDocumentLoadSuccess}
-                    onLoadError={onDocumentLoadError}
-                    loading={<FaSpinner className="text-4xl text-[#D4AF37] animate-spin" />}
-                  >
-                    <Page
-                      pageNumber={pageNumber}
-                      width={Math.min(600, window?.innerWidth - 48)}
-                      renderTextLayer={true}
-                      renderAnnotationLayer={true}
-                    />
-                  </Document>
-                </div>
-              )}
+            <div className="flex-1 bg-gray-100 p-4 md:p-6 lg:h-[700px]">
+              <div className="w-full h-full flex justify-center items-start overflow-auto">
+                <Document
+                  file={prospectusPath}
+                  onLoadSuccess={onDocumentLoadSuccess}
+                  onLoadError={onDocumentLoadError}
+                  loading={
+                    <div className="flex flex-col items-center justify-center h-[420px] lg:h-[620px]">
+                      <FaSpinner className="text-4xl text-[#D4AF37] animate-spin mb-4" />
+                      <p className="text-gray-600">Loading prospectus...</p>
+                    </div>
+                  }
+                >
+                  <Page
+                    pageNumber={pageNumber}
+                    width={pageRenderWidth}
+                    renderTextLayer={false}
+                    renderAnnotationLayer={false}
+                    loading={
+                      <div className="flex items-center justify-center h-[420px] lg:h-[620px]">
+                        <FaSpinner className="text-4xl text-[#D4AF37] animate-spin" />
+                      </div>
+                    }
+                  />
+                </Document>
+              </div>
             </div>
 
             {/* Controls Sidebar */}

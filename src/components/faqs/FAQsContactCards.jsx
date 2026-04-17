@@ -54,7 +54,7 @@ const FAQsContactCards = ({ contactInfo }) => {
                     return (
                         <a
                             key={index}
-                            href="https://www.google.com/maps/search/?api=1&query=29+C+17+Circular+Road,+University+Town,+Peshawar,+Pakistan,+25000"
+                            href="https://www.google.com/maps/dir/?api=1&destination=33.99053350641758,71.49571067960983&travelmode=driving&dir_action=navigate"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="block w-full md:w-1/3"

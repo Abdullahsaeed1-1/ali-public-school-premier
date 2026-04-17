@@ -11,7 +11,7 @@ const CampusAdmissionsPage = () => {
     <div className="bg-white min-h-screen">
       <AdmissionHero />
       <AdmissionSteps />
-      {/* <ProspectusViewer /> */}
+      <ProspectusViewer />
       <AdmissionEnquiry />
       <VisitUs/>
     </div>

@@ -23,6 +23,7 @@ import prospectusFile from '../assets/prospectus.pdf';
 const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [isHovered, setIsHovered] = useState(null);
+  const mapDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=33.99053350641758,71.49571067960983&travelmode=driving&dir_action=navigate";
 
   return (
     <footer className="bg-white text-primary relative overflow-hidden border-t border-gray-200">
@@ -116,13 +117,13 @@ const Footer = () => {
             <ul className="space-y-4">
 
               <li>
-                <Link to="/faqs" className="flex items-center gap-3 text-gray-600 hover:text-secondary group py-2 transition-colors duration-300">
+                <Link to="/faqs" className="flex items-center gap-3 font-subheading text-gray-600 hover:text-secondary group py-2 transition-colors duration-300">
                   <FaChevronRight size={10} className="text-secondary" />
                   <span>FAQs</span>
                 </Link>
               </li>
               <li>
-                <Link to="/contact" className="flex items-center gap-3 text-gray-600 hover:text-secondary group py-2 transition-colors duration-300">
+                <Link to="/contact" className="flex items-center gap-3 font-subheading text-gray-600 hover:text-secondary group py-2 transition-colors duration-300">
                   <FaChevronRight size={10} className="text-secondary" />
                   <span>Contact</span>
                 </Link>
@@ -137,12 +138,12 @@ const Footer = () => {
                         <FaFilePdf className="text-red-600 text-3xl z-10 relative" />
                       </div>
                       <div className="flex-1">
-                        <span className="block text-primary font-bold text-sm mb-1">Download Prospectus</span>
-                        <span className="block text-gray-500 text-xs mb-2">{currentYear}-{currentYear + 1} Session</span>
+                        <span className="block font-subheading text-primary font-bold text-sm mb-1">Download Prospectus</span>
+                        <span className="block font-subheading text-gray-500 text-xs mb-2">{currentYear}-{currentYear + 1} Session</span>
                         <a
                           href={prospectusFile}
                           download="APS_Premier_Prospectus.pdf"
-                          className="flex items-center gap-2 text-secondary hover:text-primary text-sm font-bold group transition-colors"
+                          className="flex items-center gap-2 font-subheading text-secondary hover:text-primary text-sm font-bold group transition-colors"
                         >
                           <FaDownload />
                           <span>Download PDF</span>
@@ -169,12 +170,20 @@ const Footer = () => {
                   <FaMapMarkerAlt className="text-secondary text-xl z-10 relative" />
                 </div>
                 <div>
-                  <span className="block text-primary font-bold text-sm mb-1">Our Campus</span>
-                  <span className="text-gray-600 text-sm">
+                  <span className="block font-subheading text-primary font-bold text-sm mb-1">Our Campus</span>
+                  <span className="font-subheading text-gray-600 text-sm">
                     29 C 17 Circular Road,<br />
                     University Town,<br />
                     Peshawar, Pakistan, 25000
                   </span>
+                  <a
+                    href={mapDirectionsUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="block mt-2 font-subheading text-secondary hover:text-primary text-sm font-semibold transition-colors duration-300"
+                  >
+                    Open in Maps
+                  </a>
                 </div>
               </li>
 
@@ -183,8 +192,8 @@ const Footer = () => {
                   <FaPhoneAlt className="text-secondary text-lg z-10 relative" />
                 </div>
                 <div>
-                  <span className="block text-primary font-bold text-sm mb-1">Phone</span>
-                  <a href="tel:+923340813562" className="text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
+                  <span className="block font-subheading text-primary font-bold text-sm mb-1">Phone</span>
+                  <a href="tel:+923340813562" className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
                     +92 334 0813562
                   </a>
                 </div>
@@ -195,8 +204,8 @@ const Footer = () => {
                   <FiMail className="text-secondary text-lg z-10 relative" />
                 </div>
                 <div>
-                  <span className="block text-primary font-bold text-sm mb-1">Email</span>
-                  <a href="mailto:info@apspremier.com" className="text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
+                  <span className="block font-subheading text-primary font-bold text-sm mb-1">Email</span>
+                  <a href="mailto:info@apspremier.com" className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
                     info@apspremier.com
                   </a>
                 </div>
