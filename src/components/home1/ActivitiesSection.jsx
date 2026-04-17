@@ -77,9 +77,8 @@ const ActivitiesSection = () => {
                             ref={videoRef}
                             className="w-full h-auto max-h-[50vh] md:max-h-[80vh] object-cover"
                             controls
-                            preload="metadata"
+                            preload="none"
                             aria-label="School activities video"
-                            autoPlay
                             loop
                             muted
                         >

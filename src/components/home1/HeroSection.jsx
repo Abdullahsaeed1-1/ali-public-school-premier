@@ -47,6 +47,8 @@ const HeroSection = () => {
     return () => clearInterval(interval);
   }, [slides.length]);
 
+  const nextSlideIndex = currentSlide === slides.length - 1 ? 0 : currentSlide + 1;
+
   return (
     // ✅ HEADER KE LIYE SPACE ADD KI HAI
     <section className="relative w-full h-screen overflow-hidden bg-primary pt-16"> {/* pt-16 added */}
@@ -55,29 +57,38 @@ const HeroSection = () => {
       <div className="absolute top-0 left-0 w-full h-16 bg-transparent z-40"></div>
 
       {/* --- BACKGROUND SLIDES --- */}
-      {slides.map((slide, index) => (
-        <div
-          key={slide.id}
-          className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out overflow-hidden ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
-        >
-          {/* ✅ OPTIMIZED: Image dimensions properly contained with responsive scaling */}
-          <img
-            src={slide.image}
-            alt={slide.highlight}
-            className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[10000ms] ease-linear ${
-              index === currentSlide ? 'scale-100' : 'scale-100'
-            }`}
-            style={{
-              backfaceVisibility: 'hidden',
-              WebkitBackfaceVisibility: 'hidden'
-            }}
-          />
-          {/* Neutral dark overlay */}
-          <div 
-            className="absolute inset-0 w-full h-full bg-black/40 pointer-events-none"
-          ></div>
-        </div>
-      ))}
+      {slides.map((slide, index) => {
+        const shouldLoadSlide = index === currentSlide || index === nextSlideIndex;
+
+        return (
+          <div
+            key={slide.id}
+            className={`absolute inset-0 w-full h-full transition-opacity duration-1000 ease-in-out overflow-hidden ${index === currentSlide ? 'opacity-100 z-10' : 'opacity-0 z-0'}`}
+          >
+            {/* Load only current and upcoming slide image to reduce initial page payload. */}
+            {shouldLoadSlide && (
+              <img
+                src={slide.image}
+                alt={slide.highlight}
+                loading={index === currentSlide ? 'eager' : 'lazy'}
+                fetchPriority={index === currentSlide ? 'high' : 'low'}
+                decoding="async"
+                className={`absolute inset-0 w-full h-full object-cover object-center transition-transform duration-[10000ms] ease-linear ${
+                  index === currentSlide ? 'scale-100' : 'scale-100'
+                }`}
+                style={{
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden'
+                }}
+              />
+            )}
+            {/* Neutral dark overlay */}
+            <div
+              className="absolute inset-0 w-full h-full bg-black/40 pointer-events-none"
+            ></div>
+          </div>
+        );
+      })}
 
       {/* --- CONTENT CONTAINER --- */}
       <div className="absolute inset-0 flex flex-col justify-center z-20">

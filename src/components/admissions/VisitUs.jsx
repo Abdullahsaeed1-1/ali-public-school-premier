@@ -116,7 +116,7 @@ const VisitUs = () => {
                                     <video
                                         className="w-full h-full object-cover"
                                         src={campusTour}
-                                        autoPlay
+                                        preload="none"
                                         loop
                                         muted
                                         controls

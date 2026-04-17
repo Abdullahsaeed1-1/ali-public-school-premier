@@ -46,13 +46,9 @@ const MissionSection = () => {
           
           <div className="relative p-8 md:p-12 bg-gray-50 rounded-3xl border border-gray-100 shadow-sm">
             {/* Decorative Quotes */}
-            <span className="absolute top-4 left-4 text-6xl text-[#D4AF37]/20 font-serif">“</span>
-            
             <p className="font-body text-xl md:text-2xl text-[#29234B] leading-relaxed font-light italic">
               Ali Public School – Premier Campus has been founded with a clear purpose: to provide young learners with a strong academic foundation in a nurturing and forward-thinking educational environment.
             </p>
-            
-            <span className="absolute bottom-4 right-4 text-6xl text-[#D4AF37]/20 font-serif transform rotate-180">“</span>
           </div>
           
           <p className="mt-10 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">

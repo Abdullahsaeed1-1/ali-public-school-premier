@@ -73,10 +73,9 @@ const CampusVideoSection = () => {
                             ref={videoRef}
                             className="w-full h-auto max-h-[50vh] md:max-h-[95vh] object-cover"
                             controls
-                            preload="metadata"
+                            preload="none"
                             poster={classroomPoster}
                             aria-label="Campus tour video"
-                            autoPlay
                             loop
                             muted
                         >
