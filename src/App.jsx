@@ -6,7 +6,7 @@ import ErrorBoundary from './components/ErrorBoundary'; // Make sure extension i
 
 // Import ALL pages
 import Home from "./pages/Home";
-import Home1 from "./pages/home1";
+import Home1 from "./pages/Home1";
 import AboutPage from "./pages/AboutPage";
 import CampusAdmissionsPage from "./pages/CampusAdmissionsPage";
 import AcademicsPage from "./pages/AcademicsPage";
