@@ -1,5 +1,5 @@
 import React from 'react';
-import campusTour from "../../assets/videos/campustour.mp4";
+import campusTour from "../../assets/videos/campustour (1).mp4";
 import brochureImg from "../../assets/images/brochure.png";
 
 import { Link } from 'react-router-dom';
@@ -107,7 +107,7 @@ const VisitUs = () => {
                                 <h3 className="text-xl md:text-2xl font-heading font-bold text-white tracking-wide">
                                     Virtual Campus Tour
                                 </h3>
-                                <p className="text-white/70 text-xs md:text-sm mt-1 uppercase tracking-widest">Ali Public School Peshawar</p>
+                                <p className="text-white/70 text-xs md:text-sm mt-1 uppercase tracking-widest">Ali Public School Premier</p>
                             </div>
 
                             {/* Video Container: Aspect ratio lock kiya hai taake mobile pe kharab na ho */}
