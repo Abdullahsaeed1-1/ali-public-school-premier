@@ -1,5 +1,5 @@
 import React from 'react';
-import campusTour from "../../assets/videos/campustour (1).mp4";
+import campusTour from "../../assets/videos/campustour (1) (1) (1) (1).mp4";
 import brochureImg from "../../assets/images/brochure.png";
 
 import { Link } from 'react-router-dom';
@@ -53,20 +53,6 @@ const VisitUs = () => {
                                     >
                                         Open in Maps
                                     </a>
-                                </div>
-                            </div>
-
-                            {/* Timings Item */}
-                            <div className="flex items-start gap-4 group">
-                                <div className="w-12 h-12 md:w-14 md:h-14 bg-white shadow-sm rounded-xl flex items-center justify-center flex-shrink-0 border border-gold-10 group-hover:scale-110 transition-transform duration-300">
-                                    <span className="text-2xl">🕒</span>
-                                </div>
-                                <div>
-                                    <h4 className="font-bold text-primary text-base md:text-lg">Visiting Hours</h4>
-                                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-x-4">
-                                        <p className="text-gray-600 text-sm">Mon-Fri: 8:00 AM - 4:00 PM</p>
-                                        <p className="text-gray-600 text-sm">Saturday: 9:00 AM - 1:00 PM</p>
-                                    </div>
                                 </div>
                             </div>
 

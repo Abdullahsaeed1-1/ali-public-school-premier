@@ -2,8 +2,7 @@ import React from 'react';
 
 const HeroSection = () => {
   return (
-    <div className="relative overflow-hidden bg-cream py-12 md:py-16 lg:py-24 border-b border-gold-10">
-      <br/>
+    <div className="relative overflow-hidden bg-cream pt-28 pb-12 sm:pt-32 md:pt-36 md:pb-16 lg:pt-40 lg:pb-24 border-b border-gold-10">
       {/* Decorative elements */}
       <div className="absolute bottom-10 left-5 md:bottom-20 md:left-10 w-24 h-24 md:w-48 md:h-48 bg-secondary/5 rounded-full animate-float opacity-30"></div>
 

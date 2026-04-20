@@ -52,7 +52,7 @@ const MissionSection = () => {
           </div>
           
           <p className="mt-10 text-gray-600 text-lg max-w-3xl mx-auto leading-relaxed">
-            Our educational approach is centred on developing well-rounded individuals who are prepared for future academic success and responsible citizenship.
+            Our educational approach is centred on developing well-rounded individuals who are prepared for future academic success and responsible citizenship
           </p>
         </div>
 

@@ -199,23 +199,6 @@ const USPSection = () => {
                       {feature.desc}
                     </p>
 
-                    {/* Learn More Arrow Animation */}
-                    <motion.div
-                      className="mt-6 pt-4 border-t border-gray-100 group-hover:border-secondary/20 transition-colors duration-300"
-                      initial={{ opacity: 0, y: 5 }}
-                      whileHover={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <span className="inline-flex items-center text-secondary font-bold text-xs uppercase tracking-wider gap-2">
-                        Learn More
-                        <motion.span
-                          animate={{ x: [0, 5, 0] }}
-                          transition={{ duration: 1.5, repeat: Infinity, repeatType: "loop" }}
-                        >
-                          →
-                        </motion.span>
-                      </span>
-                    </motion.div>
                   </div>
 
                   {/* Background icon with floating animation */}

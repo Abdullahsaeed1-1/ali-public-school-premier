@@ -26,7 +26,7 @@ const NewsGrid = () => {
              
              {/* ✅ Background Logo Watermark (Clean & Subtle) */}
              <div className="absolute -top-10 -right-10 opacity-5 transition-transform duration-700 group-hover:scale-110 group-hover:rotate-12">
-               <img src={logo} alt="Watermark" className="w-80 h-auto grayscale invert" />
+               <img src={logo} alt="Watermark" loading="lazy" decoding="async" className="w-80 h-auto grayscale invert" />
              </div>
              
              <div className="relative z-10">
@@ -59,6 +59,8 @@ const NewsGrid = () => {
               src="https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?q=80&w=800" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               alt="Morning Circle"
+              loading="lazy"
+              decoding="async"
             />
             <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent flex items-end p-5">
                <div>
@@ -74,6 +76,8 @@ const NewsGrid = () => {
               src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               alt="Buddy Programme"
+              loading="lazy"
+              decoding="async"
             />
              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent flex items-end p-5">
                <div>
@@ -102,6 +106,8 @@ const NewsGrid = () => {
               src="https://images.unsplash.com/photo-1593113598332-cd288d649433?q=80&w=800" 
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               alt="Community Projects"
+              loading="lazy"
+              decoding="async"
             />
              <div className="absolute inset-0 bg-gradient-to-t from-primary/90 via-transparent to-transparent flex items-end p-5">
                <div>

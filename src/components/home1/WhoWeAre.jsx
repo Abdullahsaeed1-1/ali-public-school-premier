@@ -30,6 +30,8 @@ const WhoWeAre = () => {
                 <img 
                   src={campusImg1}
                   alt="APS Campus Heritage 1" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -39,6 +41,8 @@ const WhoWeAre = () => {
                 <img 
                   src={campusImg2}
                   alt="APS Campus Heritage 2" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
@@ -48,13 +52,13 @@ const WhoWeAre = () => {
                 <img 
                   src={campusImg3}
                   alt="APS Campus Heritage 3" 
+                  loading="lazy"
+                  decoding="async"
                   className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                 />
               </div>
             </div>
             
-            {/* Decorative Back Box */}
-            <div className="absolute -bottom-6 -right-6 w-32 h-32 border-2 border-secondary rounded-2xl z-0 opacity-50"></div>
           </div>
 
           {/* --- Right: Content (Updated Text) --- */}

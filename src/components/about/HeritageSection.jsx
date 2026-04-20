@@ -72,7 +72,7 @@ const HeritageSection = () => {
         },
         {
             icon: <FaGraduationCap />,
-            title: "25+ Years Excellence",
+            title: "15+ Years Excellence",
             description: "Proven track record of academic success and holistic development"
         }
     ];
@@ -99,7 +99,7 @@ const HeritageSection = () => {
                             </h2>
                         </div>
                         <p className="font-subheading text-lg text-primary/70 max-w-3xl mx-auto">
-                            For over 25 years, transforming lives through educational excellence
+                            For over 15 years, transforming lives through educational excellence
                         </p>
                     </motion.div>
 

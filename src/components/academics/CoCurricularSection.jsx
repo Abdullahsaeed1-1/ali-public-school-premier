@@ -2,7 +2,8 @@ import React, { useEffect } from 'react';
 import { motion, useAnimation } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { FaFutbol, FaPalette, FaMicrophone, FaUsers, FaShieldAlt, FaSchool, FaHeart, FaBalanceScale } from 'react-icons/fa';
-import airyClassroom from "../../assets/images/pages/kgclassroom.jpeg";
+import CampusPhotoMarquee from './CampusPhotoMarquee';
+import AcademicsVideoSection from './AcademicsVideoSection';
 
 const CoCurricularSection = () => {
     const [ref, inView] = useInView({ triggerOnce: true, threshold: 0.1 });
@@ -30,17 +31,17 @@ const CoCurricularSection = () => {
     };
 
     const activities = [
-        { icon: <FaPalette />, title: "Creative Activities", desc: "Exploring imagination through art and craft." },
-        { icon: <FaMicrophone />, title: "Public Speaking", desc: "Confidence building through presentations." },
-        { icon: <FaUsers />, title: "Team Collaboration", desc: "Learning teamwork and mutual respect." },
-        { icon: <FaFutbol />, title: "Physical Development", desc: "Structured sports and outdoor activities." }
+        { icon: <FaPalette />, title: "Creative Activities", desc: "Exploring imagination through art and craft" },
+        { icon: <FaMicrophone />, title: "Public Speaking", desc: "Confidence building through presentations" },
+        { icon: <FaUsers />, title: "Team Collaboration", desc: "Learning teamwork and mutual respect" },
+        { icon: <FaFutbol />, title: "Physical Development", desc: "Structured sports and outdoor activities" }
     ];
 
     const safetyFeatures = [
-        { icon: <FaSchool />, title: "Spacious Classrooms", desc: "Well-designed for optimal learning." },
-        { icon: <FaHeart />, title: "Calm Environment", desc: "A respectful and academic atmosphere." },
-        { icon: <FaShieldAlt />, title: "Secure Campus", desc: "Supervised and safe school premises." },
-        { icon: <FaBalanceScale />, title: "Clear Discipline", desc: "High expectations for behavior." }
+        { icon: <FaSchool />, title: "Spacious Classrooms", desc: "Well-designed for optimal learning" },
+        { icon: <FaHeart />, title: "Calm Environment", desc: "A respectful and academic atmosphere" },
+        { icon: <FaShieldAlt />, title: "Secure Campus", desc: "Supervised and safe school premises" },
+        { icon: <FaBalanceScale />, title: "Clear Discipline", desc: "High expectations for behavior" }
     ];
 
     return (
@@ -83,8 +84,10 @@ const CoCurricularSection = () => {
                         </div>
                     </div>
 
+                    <CampusPhotoMarquee />
+
                     {/* --- SAFE AND SUPPORTIVE ENVIRONMENT --- */}
-                    <div className="mb-24">
+                    <div className="mb-12 md:mb-16">
                         <motion.div variants={itemVariants} className="text-center mb-16">
                             <span className="text-[#D4AF37] font-bold tracking-[0.2em] uppercase text-sm mb-3 block">
                                 Caring Institution
@@ -113,6 +116,8 @@ const CoCurricularSection = () => {
                             ))}
                         </div>
                     </div>
+
+                    <AcademicsVideoSection />
 
                 </motion.div>
             </div>

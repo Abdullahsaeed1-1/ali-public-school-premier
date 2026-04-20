@@ -32,7 +32,7 @@ const CharacterIntro = () => {
             CHARACTER & VALUES
           </h2>
           <p className="text-xl text-[#29234B]/70 max-w-3xl mx-auto leading-relaxed animate-text-slide">
-            Growing Kinder, Braver, Better Humans
+            Growing kinder, braver, better humans
           </p>
         </div>
 
@@ -44,7 +44,7 @@ const CharacterIntro = () => {
                 Holistic Development
               </h3>
               <p className="text-[#29234B]/80 mb-6 leading-relaxed">
-                At APS, we educate the whole child — mind, heart and character.
+                At Ali Public School Premier, we educate the whole child — mind, heart and character.
                 Academic excellence is strengthened by leadership, responsibility and compassion.
               </p>
 

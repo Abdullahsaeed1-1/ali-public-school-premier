@@ -83,9 +83,6 @@ const JuniorSchoolSection = () => {
                                 <h2 className="font-heading text-3xl md:text-5xl text-white font-bold mb-4">
                                     PRIMARY YEARS PROGRAMME
                                 </h2>
-                                <p className="text-gray-300 font-medium text-lg tracking-wide uppercase">
-                                    Grades 1 – 5
-                                </p>
                             </div>
                         </div>
 
@@ -99,6 +96,8 @@ const JuniorSchoolSection = () => {
                                         <img 
                                             src={gardenImage} 
                                             alt="School Garden" 
+                                            loading="lazy"
+                                            decoding="async"
                                             className="w-64 h-64 md:w-80 md:h-80 rounded-3xl shadow-xl object-cover border-4 border-[#D4AF37]"
                                         />
                                     </div>

@@ -3,8 +3,8 @@ import { FaUserTie, FaDoorOpen, FaTint, FaPuzzlePiece, FaChalkboard, FaDesktop, 
 import activities from "../../assets/images/campus/activities.jpeg";
 import canteen from "../../assets/images/campus/canteen.jpeg";
 import classroomImg from "../../assets/images/campus/classroom.jpeg";
-import gardenImg from "../../assets/images/campus/greenlearning.jpeg";
-import kgImg from "../../assets/images/campus/kg.jpeg";
+import gardenImg from "../../assets/images/garden.jpeg";
+import kgImg from "../../assets/images/kg.jpeg";
 import learningImg from "../../assets/images/campus/talking.png";
 import playareaImg from "../../assets/images/campus/swings.jpeg";
 import principalOffice from "../../assets/images/pages/principaloffice.png";
@@ -103,6 +103,8 @@ const AdditionalFacilities = () => {
                     <img
                       src={facility.image}
                       alt={facility.title}
+                      loading="lazy"
+                      decoding="async"
                       className="mt-3 w-full h-32 sm:h-40 md:h-44 lg:h-48 object-cover rounded-lg shadow-sm border border-gray-100"
                     />
                   )}

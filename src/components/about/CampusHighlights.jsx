@@ -9,7 +9,7 @@ import { FaBook, FaPaintBrush, FaTree, FaLaptop, FaChalkboardTeacher } from 'rea
 const CampusHighlights = () => {
   const highlights = [
     {
-      title: "8 Bright Classrooms",
+      title: "Bright Classrooms",
       icon: MdClass,
       description: "Spacious, well-lit classrooms with modern furniture and learning aids",
       features: ["Natural lighting", "Smart boards", "Comfortable seating", "Learning corners"],
@@ -33,35 +33,14 @@ const CampusHighlights = () => {
       title: "Art & Imagination Studio",
       icon: FaPaintBrush,
       description: "Creative space for artistic expression with various art materials",
-      features: ["Art supplies", "Display walls", "Wash stations", "Project space"],
+      features: ["Art supplies", "Display walls", "Project space"],
       color: "from-[#29234B] to-[#3D366A]"
     },
     {
       title: "Outdoor Learning Garden",
       icon: FaTree,
-      description: "Safe outdoor area with eco-grass, rubber flooring and shaded deck",
-      features: ["Eco-friendly grass", "Rubber safety flooring", "Shaded areas", "Learning stations"],
-      color: "from-[#D4AF37] to-[#C19C2E]"
-    },
-    {
-      title: "AI & Digital Learning Corner",
-      icon: FaLaptop,
-      description: "Technology hub with interactive boards and supervised learning",
-      features: ["Interactive whiteboards", "Tablet stations", "Coding tools", "Supervised access"],
-      color: "from-[#10B981] to-[#0DA271]"
-    },
-    {
-      title: "Medical & Wellness Room",
-      icon: MdHealthAndSafety,
-      description: "Fully equipped medical facility with trained staff",
-      features: ["First aid supplies", "Resting beds", "Health monitoring", "Emergency protocols"],
-      color: "from-[#29234B] to-[#3D366A]"
-    },
-    {
-      title: "Teacher Workroom",
-      icon: FaChalkboardTeacher,
-      description: "Dedicated space for teacher planning and collaboration",
-      features: ["Planning stations", "Resource library", "Meeting area", "Technology access"],
+      description: "Safe outdoor area with eco-grass and shaded deck",
+      features: ["Eco-friendly grass", "Shaded areas", "Learning stations"],
       color: "from-[#D4AF37] to-[#C19C2E]"
     }
   ];

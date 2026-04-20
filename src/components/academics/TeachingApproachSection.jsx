@@ -100,6 +100,8 @@ const TeachingApproachSection = () => {
                                 <img 
                                     src="https://images.unsplash.com/photo-1544531586-fde5298cdd40?q=80&w=800" 
                                     alt="Mentorship at APS" 
+                                    loading="lazy"
+                                    decoding="async"
                                     className="w-full h-full object-cover"
                                 />
                             </div>

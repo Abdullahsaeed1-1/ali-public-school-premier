@@ -38,6 +38,7 @@ const OptimizedImage = ({ src, alt, className, priority = false }) => {
         alt={alt}
         className={`${className} transition-opacity duration-300 ${isLoaded ? 'opacity-100' : 'opacity-0'}`}
         loading={priority ? "eager" : "lazy"}
+        fetchPriority={priority ? "high" : "low"}
         decoding="async"
         onLoad={handleLoad}
         onError={handleError}
@@ -50,9 +51,9 @@ const CampusGallery = () => {
   // 1. Delays remove kar diye, ab images browser ki speed pe load hongi
   // 2. Critical images ko render hote hi fetch karne ke liye useMemo ya simple array
   const facilities = useMemo(() => [
-    { img: img1, colSpan: "md:col-span-2 md:row-span-2", height: "h-96", priority: true },
-    { img: img2, colSpan: "md:col-span-1", height: "h-48", priority: true },
-    { img: img3, colSpan: "md:col-span-1", height: "h-48", priority: true },
+    { img: img1, colSpan: "md:col-span-2 md:row-span-2", height: "h-96", priority: false },
+    { img: img2, colSpan: "md:col-span-1", height: "h-48", priority: false },
+    { img: img3, colSpan: "md:col-span-1", height: "h-48", priority: false },
     { img: img4, colSpan: "md:col-span-2", height: "h-48" },
     { img: img5, colSpan: "md:col-span-1", height: "h-48" },
     { img: img6, colSpan: "md:col-span-1 md:row-span-2", height: "h-96" },

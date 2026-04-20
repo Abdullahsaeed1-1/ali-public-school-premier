@@ -3,14 +3,14 @@ import React from 'react';
 const FAQsStats = () => {
     const stats = [
         { label: "Years of Experience", value: "15+" },
-        { label: "Core Values", value: "8" },
+        { label: "Core Values", value: "6" },
         { label: "Campuses", value: "4" }
     ];
 
     return (
         <div className="mt-16 bg-gradient-to-r from-cream to-cream/90 rounded-2xl p-8 border border-primary/20">
             <h2 className="font-heading text-3xl font-bold text-primary mb-8 text-center">
-                Quick Facts About Ali Public School
+                Quick Facts About Ali Public School Premier
             </h2>
 
             <div className="grid md:grid-cols-3 gap-6">

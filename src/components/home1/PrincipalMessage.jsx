@@ -20,6 +20,8 @@ const PrincipalMessage = () => {
               <img
                 src={principalProfile}
                 alt="Principal Ms. Anum Imtiaz"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
               />
             </div>

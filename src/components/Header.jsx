@@ -187,6 +187,9 @@ const Header = () => {
                 <img
                   src={logo}
                   alt="Ali Public School Logo"
+                  loading="eager"
+                  fetchPriority="high"
+                  decoding="async"
                   className={`
                     object-contain transition-all duration-500 ease-in-out transform origin-left
                     ${isScrolled ? LOGO_SIZE_SMALL : LOGO_SIZE_LARGE}
@@ -355,7 +358,7 @@ const Header = () => {
                 <p className="text-white/60 text-xs font-bold tracking-widest uppercase">Contact Us</p>
                 <a href="tel:+923340813562" className="block text-white text-lg font-bold hover:text-[#D4AF37]">+92 334 0813562</a>
                 <p className="text-white/40 text-[10px] pt-4">
-                  © {new Date().getFullYear()} Ali Public School & College
+                  © {new Date().getFullYear()} Ali Public School Premier
                 </p>
               </div>
             </div>

@@ -40,6 +40,8 @@ const LegacyStory = () => {
               <img
                 src={founderImg}
                 alt="Ali Afridi FCA - Founder Ali Public School"
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover rounded-2xl shadow-lg"
               />
             </div>

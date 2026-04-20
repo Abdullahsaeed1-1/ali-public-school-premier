@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import campus from "../../assets/images/pages/schoolfront.png";
-import earlyEducation from "../../assets/images/pages/earlyeducation.jpeg";
-import earlyEdu from "../../assets/images/pages/cars.jpeg";
+import classroom from "../../assets/images/classroom.jpeg";
+import kg from "../../assets/images/kg.jpeg";
 
 import admission from "../../assets/images/pages/extra_curricular.png";
 
@@ -12,14 +12,14 @@ const ExploreGrid = () => {
   // Content sourced strictly from APS Premier Document [cite: 153, 150]
   const cards = [
     { 
-      title: "Early Years (Ages 3–7)", 
-      img: earlyEdu, // Young kid playing/learning
+      title: "Early Years", 
+      img: kg, // Young kid playing/learning
       link: "/academicspage",
       desc: "Phonics, nature play and creative expression"
     },
     { 
-      title: "Junior Primary (Ages 7–10)", 
-      img: earlyEducation, // Older kids discussing
+      title: "Junior Primary", 
+      img: classroom, // Older kids discussing
       link: "/academicspage",
       desc: "Inquiry-based science, digital literacy and mindfulness"
     },
@@ -27,13 +27,13 @@ const ExploreGrid = () => {
       title: "Co-curricular Activities", 
       img: admission, // Welcoming/Handshake
       link: "/academicspage",
-      desc: "Sports, arts and clubs where children discover talents and develop confidence"
+      desc: "Sports and arts where children discover talents and develop confidence"
     },
     { 
       title: "Campus & Facilities", 
       img: campus, // Modern library/space
       link: "/aboutpage",
-      desc: "AI corners, reading lofts and outdoor learning gardens"
+      desc: "Reading lofts and outdoor learning gardens"
     },
   ];
 
@@ -62,6 +62,8 @@ const ExploreGrid = () => {
               <img 
                 src={card.img} 
                 alt={card.title} 
+                loading="lazy"
+                decoding="async"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
               />
               

@@ -22,8 +22,8 @@ const CampusGallery = () => {
     },
     {
       id: 3,
-      title: "Creative Studio",
-      description: "Art and music facilities for creative expression",
+      title: "KG and Nursery Classrooms",
+      description: "KG and nursery classrooms",
       image: img10
     }
   ];
@@ -53,6 +53,8 @@ const CampusGallery = () => {
           <img
             src={campusImages[activeImage].image}
             alt={campusImages[activeImage].title}
+            loading="lazy"
+            decoding="async"
             className="w-full h-full object-cover rounded-xl"
           />
 

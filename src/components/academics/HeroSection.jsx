@@ -97,7 +97,7 @@ const HeroSection = () => {
                         transition={{ delay: 0.4, duration: 0.6 }}
                         className="font-subheading text-xl md:text-2xl text-[#29234B]/80 mb-6 max-w-3xl mx-auto"
                     >
-                        Shaping Minds, Building Futures Through Excellence
+                        Shaping minds, building futures through excellence
                     </motion.p>
 
                     <motion.div

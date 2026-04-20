@@ -32,6 +32,9 @@ const Home = () => {
           <img
             src={schoolFront}
             alt="Ali Public School Campus"
+            loading="eager"
+            fetchPriority="high"
+            decoding="async"
             className="w-full h-full object-cover opacity-40"
           />
 
@@ -51,7 +54,7 @@ const Home = () => {
         <div className="relative z-10 w-full h-full flex flex-col items-center justify-center text-center px-4 sm:px-6 md:px-8 animate-fade-in">
           <div className="mb-3 sm:mb-4 md:mb-6 animate-scale-in">
             <div className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full overflow-hidden mx-auto group hover:scale-105 transition-transform duration-300">
-              <img src={logo} alt="Logo" className="w-full h-full object-cover" />
+              <img src={logo} alt="Logo" loading="eager" fetchPriority="high" decoding="async" className="w-full h-full object-cover" />
             </div>
           </div>
 
@@ -64,7 +67,7 @@ const Home = () => {
           <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 animate-scale-in w-full px-2 sm:px-4">
             <h1 className="font-heading text-white font-bold mx-auto max-w-4xl">
               <span className="block text-3xl md:text-5xl text-primary">ALI PUBLIC SCHOOL</span>
-              <span className="block text-xl md:text-3xl text-secondary mt-2">PREMIER CAMPUS</span>
+              <span className="block text-xl md:text-3xl text-secondary mt-2">PREMIER</span>
             </h1>
 
             <div className="mt-4 h-0.5 w-28 bg-gradient-to-r from-transparent via-secondary to-transparent mx-auto"></div>
@@ -79,7 +82,7 @@ const Home = () => {
               to="/admissions"
               className="group bg-gradient-to-r from-secondary to-yellow-500 text-primary font-bold rounded-full px-8 py-3 shadow-lg hover:scale-105 transition-all duration-300 relative overflow-hidden"
             >
-              <span className="relative z-10">🎓 APPLY FOR ADMISSION</span>
+              <span className="relative z-10">🎓 APPLY FOR ADMISSIONS</span>
               <div className="absolute inset-0 bg-gradient-to-r from-yellow-500 to-secondary rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Link>
 
@@ -107,7 +110,7 @@ const Home = () => {
             <h2 className="font-heading text-primary font-bold text-2xl">Why Choose APS?</h2>
             <div className="h-1 w-20 bg-secondary mx-auto mt-2 mb-4"></div>
             <p className="text-gray-600 text-sm max-w-xl mx-auto">
-              Experience excellence in education with our state-of-the-art facilities and curriculum.
+              Experience excellence in education with our state-of-the-art facilities and curriculum
             </p>
           </div>
 
@@ -144,10 +147,6 @@ const Home = () => {
                   {feature.title}
                 </h3>
                 <p className="text-gray-600 text-sm">{feature.desc}</p>
-
-                <div className="relative z-10 mt-4 opacity-0 group-hover:opacity-100 transition-all duration-500">
-                  <span className="text-secondary font-semibold">Learn More →</span>
-                </div>
               </div>
             ))}
           </div>

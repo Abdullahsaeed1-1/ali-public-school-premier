@@ -24,6 +24,8 @@ const Footer = () => {
   const currentYear = new Date().getFullYear();
   const [isHovered, setIsHovered] = useState(null);
   const mapDirectionsUrl = "https://www.google.com/maps/dir/?api=1&destination=33.99053350641758,71.49571067960983&travelmode=driving&dir_action=navigate";
+  const whatsappChatUrl = "https://wa.me/923340813562";
+  const emailUrl = "mailto:info@apspremier.com";
 
   return (
     <footer className="bg-white text-primary relative overflow-hidden border-t border-gray-200">
@@ -44,6 +46,8 @@ const Footer = () => {
               <img
                 src={logo}
                 alt="APS Premier Logo"
+                loading="lazy"
+                decoding="async"
                 className="h-20 w-auto filter drop-shadow-md"
               />
 
@@ -193,7 +197,12 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="block font-subheading text-primary font-bold text-sm mb-1">Phone</span>
-                  <a href="tel:+923340813562" className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
+                  <a
+                    href={whatsappChatUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300"
+                  >
                     +92 334 0813562
                   </a>
                 </div>
@@ -205,7 +214,7 @@ const Footer = () => {
                 </div>
                 <div>
                   <span className="block font-subheading text-primary font-bold text-sm mb-1">Email</span>
-                  <a href="mailto:info@apspremier.com" className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
+                  <a href={emailUrl} className="font-subheading text-gray-600 hover:text-secondary text-sm transition-colors duration-300">
                     info@apspremier.com
                   </a>
                 </div>
@@ -224,18 +233,6 @@ const Footer = () => {
               <p className="font-subheading text-gray-500 text-sm">
                 © {currentYear} Ali Public School Premier. All rights reserved.
               </p>
-            </div>
-
-            <div className="flex flex-wrap justify-center gap-6">
-              {['Privacy Policy'].map((item) => (
-                <Link
-                  key={item}
-                  to={`/${item.toLowerCase().replace(' ', '')}`}
-                  className="text-gray-500 hover:text-primary text-sm font-medium transition-colors duration-300"
-                >
-                  {item}
-                </Link>
-              ))}
             </div>
           </div>
         </div>
