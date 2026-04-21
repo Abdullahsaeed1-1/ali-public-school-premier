@@ -101,13 +101,15 @@ const VisitUs = () => {
                                 <div className="aspect-video bg-black rounded-xl overflow-hidden shadow-inner border border-gray-100">
                                     <video
                                         className="w-full h-full object-cover"
-                                        src={campusTour}
                                         preload="none"
                                         loop
                                         muted
                                         controls
                                         playsInline
-                                    />
+                                    >
+                                        <source src={campusTour} type="video/mp4" />
+                                        Your browser does not support the video tag.
+                                    </video>
                                 </div>
 
                                 {/* Bottom Buttons: Mobile pe 1 column, Tablet+ pe 2 columns */}

@@ -15,14 +15,16 @@ const AcademicsVideoSection = () => {
         <div className="aspect-video overflow-hidden rounded-xl bg-black">
           <video
             className="w-full h-full object-cover"
-            src={randomApsVideo}
             controls
             autoPlay
             muted
             loop
             playsInline
             preload="metadata"
-          />
+          >
+            <source src={randomApsVideo} type="video/mp4" />
+            Your browser does not support the video tag.
+          </video>
         </div>
       </div>
     </motion.div>
