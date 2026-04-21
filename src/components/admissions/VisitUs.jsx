@@ -44,7 +44,7 @@ const VisitUs = () => {
                                 </div>
                                 <div>
                                     <h4 className="font-bold text-primary text-base md:text-lg">Premier Campus Location</h4>
-                                    <p className="text-gray-600 text-sm leading-snug">29 C 17 Circular Road, near KFC, University Town, Peshawar</p>
+                                    <p className="text-gray-600 text-sm leading-snug">29 C 17 Circular Road, University Town, Peshawar</p>
                                     <a
                                         href={mapDirectionsUrl}
                                         target="_blank"
