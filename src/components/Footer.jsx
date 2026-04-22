@@ -71,7 +71,6 @@ const Footer = () => {
                   key={idx}
                   href={social.href}
                   target="_blank"
-                  rel="noopener noreferrer"
                   className="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-primary hover:bg-secondary hover:text-white transition-all duration-300 transform hover:scale-110"
                 >
                   <social.icon size={16} />
@@ -93,7 +92,7 @@ const Footer = () => {
                 { name: 'About Our Heritage', link: '/aboutpage' },
                 { name: 'Academic Programs', link: '/academicspage' },
                 { name: 'Admissions Process', link: '/campusadmissionspage' },
-                { name: 'Legacy', link: '/aboutpage' },
+                { name: 'Legacy', link: '/legacypage' },
               ].map((item, idx) => (
                 <li key={item.name}>
                   <Link
