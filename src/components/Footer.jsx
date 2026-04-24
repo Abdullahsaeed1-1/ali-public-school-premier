@@ -90,8 +90,8 @@ const Footer = () => {
             <ul className="space-y-3">
               {[
                 { name: 'About Our Heritage', link: '/aboutpage' },
-                { name: 'Academic Programs', link: '/academicspage' },
-                { name: 'Admissions Process', link: '/campusadmissionspage' },
+                { name: 'Academic Programs', link: '/academics' },
+                { name: 'Admissions Process', link: '/admissions' },
                 { name: 'Legacy', link: '/legacypage' },
               ].map((item, idx) => (
                 <li key={item.name}>

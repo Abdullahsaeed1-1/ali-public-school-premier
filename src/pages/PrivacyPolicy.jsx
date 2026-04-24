@@ -21,6 +21,7 @@ import RightsSection from '../components/privacy/RightSection';
 import UpdatesSection from '../components/privacy/UpdatesSection';
 import ContactSection from '../components/privacy/ContactSection';
 import PrivacyAnimations from '../components/privacy/PrivacyAnimations';
+import SEO from '../components/seo/SEO';
 
 const PrivacyPolicy = () => {
   const [activeSection, setActiveSection] = useState('overview');
@@ -137,6 +138,13 @@ const PrivacyPolicy = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white">
+      <SEO
+        title="Privacy Policy"
+        description="Read the APS Premier privacy policy on data collection, usage, protection, and student-parent rights."
+        canonicalPath="/privacy"
+        ogImage="/favicon.png"
+      />
+
       {/* Header Section */}
       <PrivacyHeader />
 

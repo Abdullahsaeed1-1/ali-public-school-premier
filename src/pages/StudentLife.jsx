@@ -25,6 +25,7 @@ import {
 } from 'react-icons/fa';
 import { GiBasketballBall, GiSoccerBall, GiRunningShoe, GiBookshelf } from 'react-icons/gi';
 import { MdScience, MdSportsCricket, MdTheaterComedy } from 'react-icons/md';
+import SEO from '../components/seo/SEO';
 
 const StudentLife = () => {
     const facilities = [
@@ -197,6 +198,13 @@ const StudentLife = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white">
+        <SEO
+          title="Student Life"
+          description="Discover student life at APS Premier through clubs, sports, facilities, events, and holistic development programs."
+          canonicalPath="/studentlife"
+          ogImage="/favicon.png"
+        />
+
             {/* Header Section */}
             <div className="relative bg-gradient-to-r from-[#FAFAFA] via-white to-[#FAFAFA] text-[#29234B] py-20 px-4 md:px-8 overflow-hidden border-b border-[#E5E7EB]">
                 <div className="absolute inset-0 opacity-5">

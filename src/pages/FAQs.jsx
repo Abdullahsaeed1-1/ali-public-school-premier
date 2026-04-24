@@ -7,6 +7,7 @@ import FAQsAccordion from '../components/faqs/FAQsAccordion';
 import FAQsStats from '../components/faqs/FAQsStats';
 import FAQsCTASection from '../components/faqs/FAQsCTASection';
 import { faqs, categories, contactInfo } from '../components/faqs/faqsData';
+import SEO from '../components/seo/SEO';
 
 const FAQs = () => {
     const [openAccordion, setOpenAccordion] = useState(null);
@@ -22,6 +23,13 @@ const FAQs = () => {
 
     return (
         <div className="min-h-screen bg-cream">
+            <SEO
+                title="FAQs"
+                description="Find answers to common questions about admissions, academics, school timings, and policies at APS Premier."
+                canonicalPath="/faqs"
+                ogImage="/favicon.png"
+            />
+
             {/* Header Section with Cream Background */}
             <FAQsBanner />
             

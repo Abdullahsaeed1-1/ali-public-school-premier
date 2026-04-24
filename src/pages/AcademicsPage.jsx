@@ -10,10 +10,18 @@ import TeachingApproachSection from '../components/academics/TeachingApproachSec
 import CoCurricularSection from '../components/academics/CoCurricularSection';
 import OutcomesSection from '../components/academics/OutcomesSection';
 import Footer from '../components/Footer';
+import SEO from '../components/seo/SEO';
 
 const AcademicsPage = () => {
     return (
         <div className="min-h-screen">
+            <SEO
+                title="Academics"
+                description="Explore APS Premier academics from early years to upper primary with inquiry-driven and balanced learning."
+                canonicalPath="/academics"
+                ogImage="/favicon.png"
+            />
+
             {/* Header with cream background */}
             <div className="bg-cream">
                 <Header />

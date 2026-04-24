@@ -1,5 +1,6 @@
 import React from 'react';
 import Header from '../components/Header';
+import SEO from '../components/seo/SEO';
 import HeroSection from '../components/home1/HeroSection';
 import StatsSection from '../components/home1/StatsSection';
 import USPSection from '../components/home1/USPSection';
@@ -19,7 +20,16 @@ import CampusVideoSection from '../components/home1/CampusVideoSection';
 
 const Home1 = () => {
   return (
-    <div className="w-full min-h-screen bg-light">
+    <>
+      <SEO
+        title="Home"
+        description="Ali Public School Premier provides academic excellence, character building, and modern learning for every child."
+        canonicalPath="/"
+        noindex
+        ogImage="/favicon.png"
+      />
+
+      <div className="w-full min-h-screen bg-light">
 
       {/* Header fixed top pe */}
       <Header />
@@ -48,7 +58,8 @@ const Home1 = () => {
       </main>
 
 
-    </div>
+      </div>
+    </>
   );
 };
 

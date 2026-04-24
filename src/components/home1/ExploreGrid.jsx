@@ -14,19 +14,19 @@ const ExploreGrid = () => {
     { 
       title: "Early Years", 
       img: kg, // Young kid playing/learning
-      link: "/academicspage",
+      link: "/academics",
       desc: "Phonics, nature play and creative expression"
     },
     { 
       title: "Junior Primary", 
       img: classroom, // Older kids discussing
-      link: "/academicspage",
+      link: "/academics",
       desc: "Inquiry-based science, digital literacy and mindfulness"
     },
     { 
       title: "Co-curricular Activities", 
       img: admission, // Welcoming/Handshake
-      link: "/academicspage",
+      link: "/academics",
       desc: "Sports and arts where children discover talents and develop confidence"
     },
     { 

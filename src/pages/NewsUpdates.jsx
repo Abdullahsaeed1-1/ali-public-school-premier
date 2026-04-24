@@ -14,6 +14,7 @@ import {
     FaHeart
 } from 'react-icons/fa';
 import { GiTrophyCup, GiDiploma, GiSchoolBag } from 'react-icons/gi';
+import SEO from '../components/seo/SEO';
 
 const NewsUpdates = () => {
     const [activeCategory, setActiveCategory] = useState('all');
@@ -194,6 +195,13 @@ const NewsUpdates = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white">
+            <SEO
+                title="News & Updates"
+                description="Stay updated with APS Premier announcements, events, achievements, and student highlights."
+                canonicalPath="/newsupdates"
+                ogImage="/favicon.png"
+            />
+
             {/* Header Section */}
             <div className="relative bg-gradient-to-r from-[#FAFAFA] via-white to-[#FAFAFA] text-[#29234B] py-20 px-4 md:px-8 overflow-hidden border-b border-[#E5E7EB]">
                 <div className="absolute inset-0 opacity-5">

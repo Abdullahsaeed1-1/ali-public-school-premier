@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/academicspage",
+      "destination": "/academics",
+      "permanent": true
+    },
+    {
+      "source": "/campusadmissionspage",
+      "destination": "/admissions",
+      "permanent": true
+    },
+    {
+      "source": "/privacypolicy",
+      "destination": "/privacy",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

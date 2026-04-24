@@ -6,6 +6,7 @@ import LegacyStory from '../components/legacy/LegacyStory';
 import LegacyVision from '../components/legacy/LegacyVision';
 import PrincipalMessage from '../components/home1/PrincipalMessage';
 import WhoWeAre from '../components/home1/WhoWeAre';
+import SEO from '../components/seo/SEO';
 
 const LegacyPage = () => {
   
@@ -16,6 +17,13 @@ const LegacyPage = () => {
 
   return (
     <div className="bg-white min-h-screen">
+      <SEO
+        title="Legacy"
+        description="Explore the legacy, vision, and educational journey that shaped Ali Public School Premier."
+        canonicalPath="/legacypage"
+        ogImage="/favicon.png"
+      />
+
       {/* Header */}
       <Header />
       {/* 1. Hero Banner */}

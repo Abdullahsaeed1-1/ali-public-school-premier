@@ -75,7 +75,7 @@ const AcademicsSection = () => {
         {/* --- Button --- */}
         <div className="text-center">
           <Link 
-            to="/academicspage" 
+            to="/academics" 
             className="inline-flex items-center gap-3 bg-[#D4AF37] text-[#29234B] font-bold py-4 px-10 rounded-xl shadow-lg hover:bg-[#29234B] hover:text-white transition-all duration-300 transform hover:-translate-y-1"
           >
             Explore Full Curriculum <FaArrowRight className="text-sm" />

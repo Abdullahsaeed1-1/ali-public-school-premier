@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Swal from "sweetalert2";
+import SEO from "../components/seo/SEO";
 
 const Contact = () => {
   const subjectOptions = ["Complaint", "General Information", "Registration"];
@@ -144,6 +145,13 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white py-16 px-4 sm:px-6 lg:px-8">
+      <SEO
+        title="Contact"
+        description="Get in touch with Ali Public School Premier for admissions, registration, or general school information."
+        canonicalPath="/contact"
+        ogImage="/favicon.png"
+      />
+
       <div className="max-w-7xl mx-auto">
         {/* Header with fade-up animation */}
         <div className="text-center mb-16 animate-fadeInUp">

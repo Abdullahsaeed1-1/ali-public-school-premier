@@ -29,13 +29,13 @@ const NAV_LINKS = [
   },
   { 
     id: 4, 
-    path: "/academicspage", 
+    path: "/academics", 
     label: "Academics", 
     icon: "📚" 
   },
   { 
     id: 5, 
-    path: "/campusadmissionspage", 
+    path: "/admissions", 
     label: "Admissions", 
     icon: "📝" 
   },

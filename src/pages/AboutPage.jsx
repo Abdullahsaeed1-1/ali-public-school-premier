@@ -10,10 +10,18 @@ import CampusHighlights from '../components/about/CampusHighlights';
 import AdditionalFacilities from '../components/about/AdditionalFacilities';
 import CampusGallery from '../components/about/CampusGallery';
 import CampusMap from '../components/about/CampusMap';
+import SEO from '../components/seo/SEO';
 
 const AboutPage = () => {
     return (
         <div className="min-h-screen w-full overflow-x-hidden">
+            <SEO
+                title="About Us"
+                description="Discover the heritage, mission, and campus strengths of Ali Public School Premier in Peshawar."
+                canonicalPath="/aboutpage"
+                ogImage="/favicon.png"
+            />
+
             {/* Header with cream background */}
             {/* 'relative z-50' ensures header stays above other sections on mobile */}
             <div className="bg-cream relative z-50">

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 import schoolFront from "../assets/images/pages/schoolfront.png";
+import SEO from "../components/seo/SEO";
 
 const Home = () => {
   useEffect(() => {
@@ -25,7 +26,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="w-full overflow-x-hidden">
+    <>
+      <SEO
+        title="Campus Overview"
+        description="Explore the Ali Public School Premier campus overview, facilities, learning environment, and student-focused educational journey."
+        canonicalPath="/"
+        ogImage="/favicon.png"
+      />
+
+      <div className="w-full overflow-x-hidden">
       {/* HERO SECTION */}
       <section className="relative h-screen flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
@@ -219,7 +228,8 @@ const Home = () => {
           animation: bounceIn 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
         }
       `}</style>
-    </div>
+      </div>
+    </>
   );
 };
 

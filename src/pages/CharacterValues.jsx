@@ -35,6 +35,7 @@ import {
 import { GiMedal, GiTargetArrows, GiStoneBlock, GiTrophyCup, GiLaurels } from 'react-icons/gi';
 import { MdSportsCricket, MdTheaterComedy, MdScience } from 'react-icons/md';
 import { SiQemu } from 'react-icons/si';
+import SEO from '../components/seo/SEO';
 
 const CharacterValues = () => {
     const coreValues = [
@@ -283,6 +284,13 @@ const CharacterValues = () => {
 
     return (
         <div className="min-h-screen bg-gradient-to-b from-[#FAFAFA] to-white">
+            <SEO
+                title="Character & Values"
+                description="See how APS Premier builds confidence, empathy, leadership, and resilience through student life and service programs."
+                canonicalPath="/charactervalues"
+                ogImage="/favicon.png"
+            />
+
             {/* Header Section */}
             <div className="relative bg-gradient-to-r from-[#FAFAFA] via-white to-[#FAFAFA] text-[#29234B] py-20 px-4 md:px-8 overflow-hidden border-b border-[#E5E7EB]">
                 <div className="absolute inset-0 opacity-5">

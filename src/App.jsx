@@ -1,8 +1,9 @@
 import React from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import ErrorBoundary from './components/ErrorBoundary'; // Make sure extension is .jsx
+import SEO from "./components/seo/SEO";
 
 // Import ALL pages
 import Home from "./pages/Home";
@@ -53,14 +54,14 @@ function App() {
           <Route path="/home1" element={<HomeLayout><Home1 /></HomeLayout>} />
           
           <Route path="/aboutpage" element={<DefaultLayout><AboutPage /></DefaultLayout>} />
-          <Route path="/campusadmissionspage" element={<DefaultLayout><CampusAdmissionsPage /></DefaultLayout>} />
-          <Route path="/academicspage" element={<DefaultLayout><AcademicsPage /></DefaultLayout>} />
           <Route path="/contact" element={<DefaultLayout><ContactPage /></DefaultLayout>} />
-          <Route path="/privacypolicy" element={<DefaultLayout><PrivacyPolicy /></DefaultLayout>} />
           <Route path="/faqs" element={<DefaultLayout><FAQs /></DefaultLayout>} />
           <Route path="/academics" element={<DefaultLayout><AcademicsPage /></DefaultLayout>} />
           <Route path="/admissions" element={<DefaultLayout><CampusAdmissionsPage /></DefaultLayout>} />
           <Route path="/privacy" element={<DefaultLayout><PrivacyPolicy /></DefaultLayout>} />
+          <Route path="/academicspage" element={<Navigate to="/academics" replace />} />
+          <Route path="/campusadmissionspage" element={<Navigate to="/admissions" replace />} />
+          <Route path="/privacypolicy" element={<Navigate to="/privacy" replace />} />
           <Route path="/legacypage" element={<DefaultLayout><LegacyPage/></DefaultLayout>}/>
           <Route path="/charactervalues" element={<DefaultLayout><CharacterValues/></DefaultLayout>}/>
           <Route path="/studentlife" element={<DefaultLayout><StudentLife/></DefaultLayout>}/>
@@ -68,12 +69,21 @@ function App() {
 
           <Route path="*" element={
             <DefaultLayout>
-              <div className="min-h-screen flex items-center justify-center py-20">
-                <div className="text-center">
-                  <h1 className="text-5xl text-secondary mb-4">404</h1>
-                  <p className="text-gray-300">Page Not Found</p>
+              <>
+                <SEO
+                  title="Page Not Found"
+                  description="The requested page could not be found on Ali Public School Premier."
+                  canonicalPath="/"
+                  noindex
+                  ogImage="/favicon.png"
+                />
+                <div className="min-h-screen flex items-center justify-center py-20">
+                  <div className="text-center">
+                    <h1 className="text-5xl text-secondary mb-4">404</h1>
+                    <p className="text-gray-300">Page Not Found</p>
+                  </div>
                 </div>
-              </div>
+              </>
             </DefaultLayout>
           } />
         </Routes>
