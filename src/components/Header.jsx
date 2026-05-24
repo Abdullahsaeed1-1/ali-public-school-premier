@@ -2,16 +2,14 @@ import React, { useState, useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/images/logo.png";
 
-// --- CONFIGURATION CONSTANTS ---
-const SCROLL_BREAKPOINT = 50; // Pixels to scroll before header changes
-const LOGO_SIZE_LARGE = "h-16 w-16 md:h-20 md:w-20"; // Top Position Size
-const LOGO_SIZE_SMALL = "h-12 w-12 md:h-14 md:w-14"; // Scrolled Position Size
+const SCROLL_BREAKPOINT = 50;
+const LOGO_SIZE_LARGE = "h-16 w-16 md:h-20 md:w-20";
+const LOGO_SIZE_SMALL = "h-12 w-12 md:h-14 md:w-14";
 
-// --- NAVIGATION DATA ---
 const NAV_LINKS = [
   { 
     id: 1, 
-    path: "/home1", 
+    path: "/campus-overview", 
     label: "Home", 
     icon: "🏠" 
   },
@@ -48,20 +46,14 @@ const NAV_LINKS = [
 ];
 
 const Header = () => {
-  // ==========================================================================
-  //  STATE MANAGEMENT
-  // ==========================================================================
-  const [isScrolled, setIsScrolled] = useState(false);
+  const [isScrolled, setIsScrolled] = useState(() =>
+    typeof window !== "undefined" ? window.scrollY > SCROLL_BREAKPOINT : false
+  );
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isHovered, setIsHovered] = useState(null);
   
-  // Router Hooks
   const location = useLocation();
   const currentPath = location.pathname;
 
-  // ==========================================================================
-  //  SCROLL HANDLER
-  // ==========================================================================
   const handleScroll = useCallback(() => {
     const scrollPosition = window.scrollY;
     if (scrollPosition > SCROLL_BREAKPOINT) {
@@ -73,15 +65,11 @@ const Header = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, [handleScroll]);
 
-  // ==========================================================================
-  //  ROUTE CHANGE HANDLER
-  // ==========================================================================
   useEffect(() => {
     window.scrollTo({
       top: 0,
@@ -89,14 +77,17 @@ const Header = () => {
       behavior: "instant",
     });
 
-    setIsMenuOpen(false);
     document.body.style.overflow = "unset";
-    setIsScrolled(false);
+    const frameId = window.requestAnimationFrame(() => {
+      setIsMenuOpen(false);
+      setIsScrolled(false);
+    });
+
+    return () => {
+      window.cancelAnimationFrame(frameId);
+    };
   }, [location]);
 
-  // ==========================================================================
-  //  MOBILE MENU HANDLERS
-  // ==========================================================================
   const toggleMobileMenu = () => {
     if (isMenuOpen) {
       setIsMenuOpen(false);
@@ -112,11 +103,6 @@ const Header = () => {
     document.body.style.overflow = "unset";
   };
 
-  // ==========================================================================
-  //  RENDER HELPERS
-  // ==========================================================================
-  
-  // Header Container Classes
   const headerClasses = `
     fixed top-0 left-0 right-0 z-[999] 
     transition-all duration-500 ease-[cubic-bezier(0.4,0,0.2,1)]
@@ -127,7 +113,6 @@ const Header = () => {
     ${isMenuOpen ? "!bg-[#29234B]" : ""}
   `;
 
-  // Text Color Logic
   const getTextColor = (isActive) => {
     if (isMenuOpen) return "text-white";
     if (isActive) return "text-[#D4AF37]";
@@ -138,7 +123,6 @@ const Header = () => {
   return (
     <>
       <style>{`
-        /* Underline Expansion Animation */
         @keyframes expandLine {
           from { width: 0; }
           to { width: 100%; }
@@ -156,7 +140,6 @@ const Header = () => {
           animation: expandLine 0.3s ease-out forwards;
         }
 
-        /* Mobile Menu Items Slide In */
         @keyframes slideIn {
           from { opacity: 0; transform: translateX(30px); }
           to { opacity: 1; transform: translateX(0); }
@@ -169,7 +152,6 @@ const Header = () => {
 
       <header className={headerClasses}>
         
-        {/* Optional Gradient Overlay for Readability on Top */}
         {!isScrolled && !isMenuOpen && (
           <div className="absolute inset-0 bg-gradient-to-b from-black/40 to-transparent pointer-events-none -z-10 transition-opacity duration-700"></div>
         )}
@@ -177,9 +159,8 @@ const Header = () => {
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center justify-between">
 
-            {/* LOGO & BRANDING */}
             <Link 
-              to="/home1" 
+              to="/campus-overview" 
               className="flex items-center gap-3 group relative z-50 focus:outline-none"
               onClick={closeMobileMenu}
             >
@@ -236,7 +217,6 @@ const Header = () => {
               </div>
             </Link>
 
-            {/* DESKTOP NAVIGATION */}
             <nav className="hidden lg:flex items-center gap-4 xl:gap-6">
               {NAV_LINKS.map((link) => {
                 const isActive = currentPath === link.path;
@@ -249,8 +229,6 @@ const Header = () => {
                       transition-all duration-300
                       ${isActive ? "nav-underline" : ""}
                     `}
-                    onMouseEnter={() => setIsHovered(link.id)}
-                    onMouseLeave={() => setIsHovered(null)}
                   >
                     <div className={`
                       absolute inset-0 transition-transform duration-300 origin-center scale-x-0 group-hover:scale-x-100 rounded-lg
@@ -270,7 +248,6 @@ const Header = () => {
 
             </nav>
 
-            {/* MOBILE TOGGLE BUTTON */}
             <button
               onClick={toggleMobileMenu}
               className="lg:hidden relative z-50 w-12 h-12 flex items-center justify-center rounded-full hover:bg-white/10 transition-colors focus:outline-none"
@@ -306,7 +283,6 @@ const Header = () => {
           </div>
         </div>
 
-        {/* MOBILE MENU OVERLAY */}
         <div
           className={`
             fixed inset-0 z-40 lg:hidden bg-[#29234B]

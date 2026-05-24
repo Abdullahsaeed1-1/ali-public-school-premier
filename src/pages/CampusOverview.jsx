@@ -6,9 +6,7 @@ import StatsSection from '../components/home1/StatsSection';
 import USPSection from '../components/home1/USPSection';
 import ExploreGrid from '../components/home1/ExploreGrid';
 import CampusGallery from '../components/home1/CampusGallery';
-import Testimonials from '../components/home1/Testimonials';
 import CTASection from '../components/home1/CTASection';
-import NewsGrid from '../components/home1/NewsGrid';
 import AcademicsSection from '../components/home1/AcademicsSection';
 import ActivitiesSection from '../components/home1/ActivitiesSection';
 import MissionSection from '../components/home1/MissionSection';
@@ -16,51 +14,41 @@ import LegacyTeaser from '../components/home1/LegacyTeaser';
 import CharacterIntro from '../components/home1/CharacterIntro';
 import CampusVideoSection from '../components/home1/CampusVideoSection';
 
-
-
-const Home1 = () => {
+const CampusOverview = () => {
   return (
     <>
       <SEO
-        title="Home"
+        title="Campus Overview"
         description="Ali Public School Premier provides academic excellence, character building, and modern learning for every child."
-        canonicalPath="/"
-        noindex
+        canonicalPath="/campus-overview"
         ogImage="/favicon.png"
       />
 
       <div className="w-full min-h-screen bg-light">
+        <Header />
 
-      {/* Header fixed top pe */}
-      <Header />
+        <main>
+          <div className="relative w-full">
+            <HeroSection />
+          </div>
 
-      {/* Main Content - HeroSection sabse pehle */}
-      <main>
-        {/* HeroSection - Full width and height */}
-        <div className="relative w-full">
-          <HeroSection />
-        </div>
-
-        {/* Rest of sections with proper spacing */}
-        <div className="w-full bg-light">
-          <USPSection />
-          <ExploreGrid />
-          <MissionSection />
-          <CampusGallery />
-          <AcademicsSection />
-          <ActivitiesSection />
-          <CTASection />
-          <LegacyTeaser/>
-          <CampusVideoSection />
-          <CharacterIntro/>
-          <StatsSection />
-        </div>
-      </main>
-
-
+          <div className="w-full bg-light">
+            <USPSection />
+            <ExploreGrid />
+            <MissionSection />
+            <CampusGallery />
+            <AcademicsSection />
+            <ActivitiesSection />
+            <CTASection />
+            <LegacyTeaser />
+            <CampusVideoSection />
+            <CharacterIntro />
+            <StatsSection />
+          </div>
+        </main>
       </div>
     </>
   );
 };
 
-export default Home1;
+export default CampusOverview;

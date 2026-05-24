@@ -1,12 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 import {
   FaHeart,
   FaUsers,
   FaShieldAlt,
   FaStar,
-  FaTrophy,
-  FaArrowRight
+  FaTrophy
 } from 'react-icons/fa';
 import { GiStoneBlock } from 'react-icons/gi';
 

@@ -11,9 +11,47 @@
       "permanent": true
     },
     {
-      "source": "/privacypolicy",
-      "destination": "/privacy",
+      "source": "/home1",
+      "destination": "/campus-overview",
       "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/charactervalues",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/newsupdates",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/privacy",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
+    {
+      "source": "/studentlife",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
     }
   ],
   "rewrites": [

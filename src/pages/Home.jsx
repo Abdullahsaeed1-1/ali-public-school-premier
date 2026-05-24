@@ -6,7 +6,6 @@ import SEO from "../components/seo/SEO";
 
 const Home = () => {
   useEffect(() => {
-    // Simple scroll animation using Intersection Observer
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,7 +34,6 @@ const Home = () => {
       />
 
       <div className="w-full overflow-x-hidden">
-      {/* HERO SECTION */}
       <section className="relative h-screen flex items-center justify-center bg-primary overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img
@@ -96,7 +94,7 @@ const Home = () => {
             </Link>
 
             <Link
-              to="/home1"
+              to="/campus-overview"
               className="group border border-white/50 text-white font-bold rounded-full px-8 py-3 hover:bg-white hover:text-primary transition-all duration-300 hover:scale-105"
             >
               🔍 DISCOVER OUR CAMPUS
@@ -112,7 +110,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* FEATURES SECTION */}
       <section className="py-12 bg-light">
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 animate-on-scroll">
@@ -164,11 +161,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* <ProspectusFlipbook /> */}
-
-      
-
-      {/* ANIMATION CSS */}
       <style>{`
         .animate-on-scroll {
           opacity: 0;
