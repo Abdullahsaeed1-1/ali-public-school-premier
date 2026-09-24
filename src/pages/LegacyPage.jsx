@@ -4,7 +4,6 @@ import Header from '../components/Header';
 import LegacyHero from '../components/legacy/LegacyHero';
 import LegacyStory from '../components/legacy/LegacyStory';
 import LegacyVision from '../components/legacy/LegacyVision';
-import PrincipalMessage from '../components/home1/PrincipalMessage';
 import WhoWeAre from '../components/home1/WhoWeAre';
 import SEO from '../components/seo/SEO';
 
@@ -30,11 +29,9 @@ const LegacyPage = () => {
       <LegacyHero />
       {/* 2. Story Section (Father & UK) */}
       <LegacyStory />
-      {/* 3. Principal Message */}
-      <PrincipalMessage />
-      {/* 4. Who We Are */}
+      {/* 3. Who We Are */}
       <WhoWeAre />
-      {/* 5. Vision & Cards */}
+      {/* 4. Vision & Cards */}
       <LegacyVision />
     </div>
   );
